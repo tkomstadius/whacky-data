@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(20, 20, 20);
+}
+
+.menuContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  width: auto;
+  height: 3em;
+  text-align: center;
+  padding: 1em;
+  margin: 0 2em;
+}
+
+a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: rgb(250, 250, 250);
+  line-height: 3;
+}
