@@ -10,6 +10,13 @@ var contributers = [{additions: 15, deletions: 10},
                     {additions: 15, deletions: 10},
                     {additions: 13, deletions: 10},
                     {additions: 15, deletions: 10},
+                    {additions: 15, deletions: 10},
+                    {additions: 15, deletions: 10},
+                    {additions: 100, deletions: 10},
+                    {additions: 15, deletions: 10},
+                    {additions: 15, deletions: 150},
+                    {additions: 15, deletions: 10},
+                    {additions: 200, deletions: 10},
                     {additions: 1, deletions: 10}];
 
 var rectangleW = 50;
@@ -21,19 +28,19 @@ function setup() {
 }
 
 function draw() {
-  x = 300;
+  x = 20;
   //if(clearData % 2 == 0) {
   background(20);
   //}
   
-  for(i = 0; i < contributers.length; i++) {
-    testAdd = random(10);
+  for(var i = 0; i < contributers.length; i++) {
+    testAdd = random(40);
     //additions
     y = height/1.6 - contributers[i].additions - testAdd;
     rectangleH = contributers[i].additions + testAdd;
 
-    fill('rgba(0, 255, 0, 0.3)');
-    stroke(0, 255, 0);
+    fill('rgba(30, 255, 170, 0.3)');
+    stroke(0, 200, 0);
     
     rect(x, y, rectangleW, rectangleH);
     
@@ -41,8 +48,8 @@ function draw() {
     y -= contributers[i].deletions;
     rectangleH = contributers[i].deletions;
 
-    fill('rgba(255, 0, 0, 0.3)');
-    stroke(255, 0, 0);
+    fill('rgba(255, 30, 170, 0.3)');
+    stroke(200, 0, 0);
     
     rect(x, y, rectangleW, rectangleH);
     x += rectangleW + 20;

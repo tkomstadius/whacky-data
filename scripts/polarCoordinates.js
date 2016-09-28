@@ -1,6 +1,6 @@
-var t = 0, w = 0, h = 0, a = 1, b = 1, status = 0, objects = 0, colour = 100;
+var t = 0, w = 0, h = 0, a = 1, b = 1, status = 0, objects = 0, colour = 100, m = 8, n1 = 1;
 
-var branches = [100, 50, 4, 100, 80, 56, 45, 2, 78]; // collect number of branches per day
+var branches = [100, 50, 100, 80, 56, 78]; // collect number of branches per day
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
@@ -30,6 +30,8 @@ function draw() {
       objects = 0;
       a = 1;
       b = 1;
+      m = random(1, 10);
+      n1 = random(1, 2);
     }
   }
   
@@ -37,26 +39,28 @@ function draw() {
   translate(w, h);
   beginShape();
   
-  for(theta = 0; theta <= TWO_PI; theta += 0.01) {
+  for(var theta = 0; theta <= TWO_PI; theta += 0.01) {
     //rotate(PI/random(-1, 1));
+    //m = random(1, 5);
+    //n1 = random(1, 1.5);
     var radius = r(theta, 
                   a, //a
                   b, //b
-                  5, //m give amount of rotational centers
-                  1, //n1 spikyness
+                  m, //m give amount of rotational centers
+                  n1, //n1 spikyness
                   sin(t) * 0.5 + 0.5, //n2
                   cos(t) * 0.5 + 0.5 //n3
                   );
-    var x = radius * cos(theta) * 50;
-    var y = radius * sin(theta) * 50;
+    var x = radius * cos(theta) * 80;
+    var y = radius * sin(theta) * 80;
     vertex(x, y);
   }
   
   endShape();
   
   t += 0.1;
-  a += 0.1;
-  b += 0.1;
+  a += 0.08;
+  b += 0.09;
   //w += 0.1;
   //h += 0.1;
   objects++;

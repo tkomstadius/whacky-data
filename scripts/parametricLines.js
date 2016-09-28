@@ -1,5 +1,5 @@
 var x, y, t = 0, v = 0;
-const NUM_LINES = 20;
+const NUM_LINES = 50;
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
@@ -13,12 +13,12 @@ function draw() {
     v = 0;
   } 
   translate(x, y);
-  strokeWeight(4);
+  strokeWeight(2);
 
-  for(i = 0; i < NUM_LINES; i++) {
-    stroke(v + 1, 201, 180);
+  for(var i = 0; i < NUM_LINES; i++) {
+    stroke(v + 1, v, 180);
     line(parametricXone(t + i), parametricYone(t + i), parametricXtwo(t + i/2), parametricYtwo(t + i/2));
-    stroke(50, v - 1, 200);
+    stroke(100, v - 1, v);
     line(parametricXone(-t - i), parametricYone(-t - i), parametricXtwo(-t - i/2), parametricYtwo(-t - i/2));
   }
   t += 0.5;
@@ -26,7 +26,7 @@ function draw() {
 }
 
 function parametricXone(t) {
-  return sin(t/10) * 100 + sin(t/6) * 200;
+  return sin(t/10) * 100 + sin(t/10) * 200;
 }
 
 function parametricYone(t) {
@@ -34,7 +34,7 @@ function parametricYone(t) {
 }
 
 function parametricXtwo(t) {
-  return sin(t/v) * 300 + sin(t) * 2;
+  return sin(t/10) * 300 + sin(t/5) * 200;
 }
 
 function parametricYtwo(t) {
