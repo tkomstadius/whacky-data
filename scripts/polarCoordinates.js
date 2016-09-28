@@ -1,10 +1,10 @@
 var t = 0, w = 0, h = 0, a = 1, b = 1, status = 0, objects = 0, colour = 100, m = 8, n1 = 1;
 
-var branches = [100, 50, 100, 80, 56, 78]; // collect number of branches per day
+var branches = [30, 50, 100, 78]; // collect number of branches per day
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
-  frameRate(20);
+  frameRate(30);
   noFill();
   stroke(colour);
   w = width/2;
